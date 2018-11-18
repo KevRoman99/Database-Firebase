@@ -1,3 +1,60 @@
-<p>
-  registry-page works!
-</p>
+<div class="row">
+    <div class="col-lg mx-auto mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="text-center">Registrar Empresa</h1>
+          <form >
+            <div class="from-group">
+              <label for="nombre">Nombre de la empresa</label>
+              <input type="text" name="nombre" id="nombre" class="form-control">
+              <div class="from-group">
+                <label for="codigo">Codigo</label>
+                <input type="text" name="codigo" id="codigo" class="form-control">
+              </div>
+              <div class="from-group">
+                <label for="logo">Logo de la empresa</label>
+                <input type="text" name="logo" id="logo" class="form-control">
+              </div>
+              <div class="card-body">
+                <h1 class="text-center">Administrador de la empresa</h1>
+                <form>
+                  <div class="from-group">
+                    <label for="email"> Email</label>
+                    <input type="email" name="email" id="email" class="form-control">
+                  </div>
+                  <div class="from-group">
+                      <label for="nombre"> Nombre</label>
+                      <input type="text" name="nombre" id="nombre" class="form-control">
+                    </div>
+                  <div class="from-group">
+                        <label for="apellido"> Apellido </label>
+                        <input type="text" name="apellido" id="apellido" class="form-control">
+                   </div>
+                  <div class="from-group">
+                      <label for="fechav"> Fecha de contratación</label>
+                      <input type="date" name="fechav" id="fechav" class="form-control">
+                  </div> 
+                  <div class="from-group">
+                      <label for="password"> Contraseña</label>
+                      <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                    <div class="from-group">
+                        <label for="password"> Confirmar Contraseña</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                      </div>
+                </form>
+              </div>
+              <div class="from-gruop justify-content-around ">
+                  <button class="btn btn-primary m-3 " type="submit">
+                      <i class="fas fa-sign-in-alt"></i> Submit
+                    </button>
+                <button class="btn btn-secondary " type="reset" (click)="resetForm(productForm)">
+                    <i class="fas fa-sync-alt"></i> Reset
+                  </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
