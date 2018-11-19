@@ -3,13 +3,13 @@
     <div class="card">
       <div class="card-body">
         <h1 class="text-center">Login</h1>
-        <form >
+        <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin()" >
           <div class="from-group">
             <label for="email">email</label>
-            <input type="email" name="email" id="email" class="form-control">
+            <input type="email" name="email" [(ngModel)]="email" class="form-control">
             <div class="from-group">
               <label for="password">Contraseña</label>
-              <input type="password" name="password" id="password" class="form-control">
+              <input type="password" name="password" [(ngModel)]="password" class="form-control">
             </div>
             <div class="from-gruop justify-content-around ">
                 <button class="btn btn-primary m-3 " type="submit">
