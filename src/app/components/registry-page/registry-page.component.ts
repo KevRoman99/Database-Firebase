@@ -17,7 +17,7 @@ export class RegistryPageComponent implements OnInit {
   onSubmitAddUser(){
     this.authService.RegistryUser(this.email, this.password)
     .then((res) =>{
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/login']);
     }).catch((err) =>{
       console.log(err);
     });

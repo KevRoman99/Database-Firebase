@@ -8,12 +8,12 @@ import {ProfilePageComponent} from './components/profile-page/profile-page.compo
 import {NotFoundPageComponent} from './components/not-found-page/not-found-page.component';
 import { from } from 'rxjs';
 
-
+import {AuthGuard} from './guards/auth.guard';
 const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'login', component: LoginPageComponent},
   {path: 'registry', component: RegistryPageComponent},
-  {path: 'profile', component: ProfilePageComponent},
+  {path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundPageComponent}
 ];
 
