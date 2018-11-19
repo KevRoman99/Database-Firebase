@@ -22,7 +22,7 @@ export class LoginPageComponent implements OnInit {
       this.router.navigate(['/profile']);
     }).catch((err) =>{
       console.log(err);
-      this.router.navigate(['/login']);
+      this.router.navigate(['S']);
     });
   }
 

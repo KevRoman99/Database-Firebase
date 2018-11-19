@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 //llamar para hacer las rutas
-import {HomePageComponent} from './components/home-page/home-page.component';
+
 import {LoginPageComponent} from './components/login-page/login-page.component';
 import {RegistryPageComponent} from './components/registry-page/registry-page.component';
 import {ProfilePageComponent} from './components/profile-page/profile-page.component';
@@ -10,8 +10,7 @@ import { from } from 'rxjs';
 
 import {AuthGuard} from './guards/auth.guard';
 const routes: Routes = [
-  {path: '', component: HomePageComponent},
-  {path: 'login', component: LoginPageComponent},
+  {path: '', component: LoginPageComponent},
   {path: 'registry', component: RegistryPageComponent},
   {path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundPageComponent}

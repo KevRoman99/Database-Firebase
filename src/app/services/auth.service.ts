@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
-//import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
+import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-//import {Admin} from '../models/admin';
+import {Admin} from '../models/admin';
 import {map} from 'rxjs/operators';
 
 
@@ -12,8 +12,10 @@ import {map} from 'rxjs/operators';
 })
 export class AuthService {
 
-  constructor(public afAuth: AngularFireAuth) { }
-  
+  constructor(public afAuth: AngularFireAuth,
+    public fireData: AngularFireDatabase) { }
+    
+    public adminList: AngularFireList <any>;
   RegistryUser(
     email: string,
     password: string
@@ -37,18 +39,18 @@ export class AuthService {
   getAuth(){
     return this.afAuth.authState.pipe(map( auth => auth ));
   }
-  //RegistryEmpresaDataBase(admin: Admin){
-   // this.companyList.push({
-   //   nombreEmp: admin.nombreEmp,
-   //   id: admin.id,
-   //   logo: admin.logo,
-    //  email: admin.email,
-    //  nombres: admin.nombres,
-    //  apellidos: admin.apellidos,
-     // fechaC: admin.fechaC,
-    //  contraseña: admin.contraseña
-   // });
-  //}
+  RegisterCompanyDataBase(admin: Admin){
+    this.adminList.push({
+      nombreEmp: admin.nombreEmp,
+      id: admin.id,
+      logo: admin.logo,
+      email: admin.email,
+      nombres: admin.nombres,
+      apellidos: admin.apellidos,
+      fechaC: admin.fechaC,
+      contraseña: admin.contraseña
+   });
+  }
 
   logout(){
     return this.afAuth.auth.signOut();

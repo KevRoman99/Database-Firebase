@@ -1,4 +1,5 @@
 export class Admin {
+    $key: string;
     nombreEmp: string;
     id: string;
     logo: string;
