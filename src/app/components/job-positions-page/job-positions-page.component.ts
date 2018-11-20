@@ -15,6 +15,7 @@ import { element } from '@angular/core/src/render3/instructions';
 })
 export class JobPositionsPageComponent implements OnInit {
   adminList: Admin[];
+  /////////holansdkjhsdofdsjhgfghyjukijhgfdcxscdfvghjikjgfcdxscdfvghj
   constructor(private adminService: AdminService,
       public toastrService: ToastrService) { }
 
