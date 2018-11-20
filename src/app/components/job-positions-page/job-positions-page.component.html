@@ -9,11 +9,11 @@
         <td scope="row">{{admin.name}}</td>
         <td scope="row">{{admin.id}} </td>
         <td>
-          <a class="bt btn-secondary text-white"  (click)="onEdit(admin)">
+          <a class="btn btn-secondary text-white ml-3"  (click)="onEdit(admin)">
             <i class="far fa-edit"></i>
-            <a class="btn btn-danger text-white" (click)="onDelete(admin.$key)">
+          </a>
+            <a class="btn btn-danger text-white ml-3" (click)="onDelete(admin.$key)">
               <i class="fas fa-trash-alt"></i>
-            </a>
           </a>
         </td>
       </tr>

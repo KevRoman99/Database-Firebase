@@ -23,5 +23,18 @@ export class AdminService {
       fechaC: admin.date
    });
   }
+  deleteAdmin($key: string){
+    this.adminList.remove($key);
+  }
+  updateAdmin(admin: Admin){
+    this.adminList.update(admin.$key,{
+      name: admin.name,
+      id: admin.id,
+      logo: admin.logo,
+      nombres: admin.names,
+      apellidos: admin.lastNames,
+      fechaC: admin.date
+    });
+  }
 
 }
