@@ -10,6 +10,7 @@ export class JobPositionsPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    /////////
   }
 
 }
