@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {AuthService} from '../../services/auth.service';
+
+
 
 @Component({
   selector: 'app-profile-page',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePageComponent implements OnInit {
 
-  constructor() { }
+
+
+  public email: string;
+  public password: string;
+  constructor(private router: Router,
+    public authService: AuthService
+    ) { }
 
   ngOnInit() {
+
   }
 
+  cambioPagPuestos(): void{
+    this.authService.Login(this.email, this.password)
+    .then((res) =>{
+      this.router.navigate(['/job']);
+    }).catch((err) =>{
+      console.log(err);
+      this.router.navigate(['S']);
+    });
+  }
 }

@@ -14,6 +14,8 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { RegisterAdminComponent } from './components/registry-page/register-admin/register-admin.component';
+import { JobPositionsPageComponent } from './components/job-positions-page/job-positions-page.component';
+
 
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
@@ -29,6 +31,7 @@ import {environment} from '../environments/environment';
 
 import {AuthGuard} from './guards/auth.guard';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +41,7 @@ import {AuthGuard} from './guards/auth.guard';
     ProfilePageComponent,
     NotFoundPageComponent,
     RegisterAdminComponent,
+    JobPositionsPageComponent,
 
   ],
   imports: [
