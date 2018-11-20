@@ -19,6 +19,7 @@ import { JobPositionsPageComponent } from './components/job-positions-page/job-p
 
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
+import {ToastrModule} from 'ngx-toastr';
 //services
 import {AuthService} from './services/auth.service';
 import {AdminService} from './services/admin.service';
@@ -51,6 +52,7 @@ import {AuthGuard} from './guards/auth.guard';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     FlashMessagesModule
   ],
