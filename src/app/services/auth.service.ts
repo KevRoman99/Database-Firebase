@@ -11,11 +11,13 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
+  adminList: AngularFireList <any>;
+  selectedAdmin: Admin = new Admin();
+
 
   constructor(public afAuth: AngularFireAuth,
-    public fireData: AngularFireDatabase) { }
+    private fireData: AngularFireDatabase) { }
     
-    public adminList: AngularFireList <any>;
   RegistryUser(
     email: string,
     password: string
@@ -39,19 +41,7 @@ export class AuthService {
   getAuth(){
     return this.afAuth.authState.pipe(map( auth => auth ));
   }
-  RegisterCompanyDataBase(admin: Admin){
-    this.adminList.push({
-      nombreEmp: admin.nombreEmp,
-      id: admin.id,
-      logo: admin.logo,
-      email: admin.email,
-      nombres: admin.nombres,
-      apellidos: admin.apellidos,
-      fechaC: admin.fechaC,
-      contraseña: admin.contraseña
-   });
-  }
-
+ 
   logout(){
     return this.afAuth.auth.signOut();
   }

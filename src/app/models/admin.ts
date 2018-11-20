@@ -1,11 +1,9 @@
 export class Admin {
     $key: string;
-    nombreEmp: string;
+    name: string;
     id: string;
     logo: string;
-    email: string;
-    nombres: string;
-    apellidos: string;
-    fechaC: Date;
-    contraseña: string;
+    names: string;
+    lastNames: string;
+    date: Date;
 }

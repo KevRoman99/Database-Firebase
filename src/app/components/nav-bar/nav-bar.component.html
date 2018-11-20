@@ -6,7 +6,7 @@
 
   <div class = "collapse navbar-collapse" id = "navbarColor02">
     <ul class = "navbar-nav mr-auto">
-      <li class = "nav-item active">
+      <li class = "nav-item active" *ngIf="!isLogin">
         <a class="nav-link" href="/" > Login </a>
       </li>
     </ul>

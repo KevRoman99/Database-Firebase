@@ -10,25 +10,25 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./registry-page.component.scss']
 })
 export class RegistryPageComponent implements OnInit {
-  public email: string;
-  public password: string;
-  constructor(public authService: AuthService,
-    public router: Router,
-    public flashMessagesServices: FlashMessagesService ) { }
+  //public email: string;
+  //public password: string;
+  //constructor(public authService: AuthService,
+    //public router: Router,
+    //public flashMessagesServices: FlashMessagesService ) { }
 
   ngOnInit() {
   }
-  onSubmitAddUser(){
-    this.authService.RegistryUser(this.email, this.password)
-    .then((res) =>{
-      this.flashMessagesServices.show('Usuario Creado Correactamente!', 
-      {cssClass: 'alert-success', timeout: 4000});
-      this.router.navigate(['']);
-    }).catch((err) =>{
-      console.log(err);
-    });
-  }
-  onSubmitAddAdmin(RegisterAdmin: NgForm){
-    this.authService.RegisterCompanyDataBase(RegisterAdmin.value);
-  }
+  //*onSubmitAddUser(){
+   /// this.authService.RegistryUser(this.email, this.password)
+   // .then((res) =>{
+   //   this.flashMessagesServices.show('Usuario Creado Correactamente!', 
+   //   {cssClass: 'alert-success', timeout: 4000});
+   //   this.router.navigate(['']);
+   // }).catch((err) =>{
+   //   console.log(err);
+   // });
+//}
+ // onSubmitAddAdmin(onAdmin: NgForm){
+    //this.authService.RegisterCompanyDataBase(onAdmin.value);
+ // }
 }

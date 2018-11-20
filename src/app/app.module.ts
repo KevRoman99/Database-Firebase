@@ -13,11 +13,13 @@ import { RegistryPageComponent } from './components/registry-page/registry-page.
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { RegisterAdminComponent } from './components/registry-page/register-admin/register-admin.component';
 
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
 //services
 import {AuthService} from './services/auth.service';
+import {AdminService} from './services/admin.service';
 //firebase
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -26,6 +28,7 @@ import {environment} from '../environments/environment';
 
 
 import {AuthGuard} from './guards/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,9 @@ import {AuthGuard} from './guards/auth.guard';
     RegistryPageComponent,
     LoginPageComponent,
     ProfilePageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    RegisterAdminComponent,
+
   ],
   imports: [
     AngularFireDatabaseModule,
@@ -45,7 +50,7 @@ import {AuthGuard} from './guards/auth.guard';
     BrowserAnimationsModule,
     FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService],
+  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
