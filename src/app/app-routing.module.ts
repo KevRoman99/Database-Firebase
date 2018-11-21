@@ -7,6 +7,7 @@ import {RegistryPageComponent} from './components/registry-page/registry-page.co
 import {ProfilePageComponent} from './components/profile-page/profile-page.component';
 import {NotFoundPageComponent} from './components/not-found-page/not-found-page.component';
 import { JobPositionsPageComponent } from './components/job-positions-page/job-positions-page.component';
+import {RegisterJobComponent} from './components/register-job/register-job.component';
 import { from } from 'rxjs';
 import {AuthGuard} from './guards/auth.guard';
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'registry', component: RegistryPageComponent},
   {path: 'profile', component: ProfilePageComponent, canActivate: [AuthGuard]},
   {path: 'job', component: JobPositionsPageComponent, canActivate: [AuthGuard]},
+  {path: 'jobRegister', component: RegisterJobComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundPageComponent},
 ];
 

@@ -7,6 +7,7 @@ import { Admin } from 'src/app/models/admin';
 //Services 
 import {AdminService} from '../../services/admin.service'
 import { ToastrService } from 'ngx-toastr';
+import { FlashMessagesModule, FlashMessagesService } from "angular2-flash-messages";
 import { element } from '@angular/core/src/render3/instructions';
 @Component({
   selector: 'app-job-positions-page',
@@ -16,7 +17,7 @@ import { element } from '@angular/core/src/render3/instructions';
 export class JobPositionsPageComponent implements OnInit {
   adminList: Admin[];
   constructor(private adminService: AdminService,
-      public toastrService: ToastrService) { }
+      private flashMessagesServices: FlashMessagesService) { }
 
   ngOnInit() {
     this.adminService.getAdmins()
@@ -33,7 +34,8 @@ export class JobPositionsPageComponent implements OnInit {
   onDelete($key: string){
     if(confirm('Are you sure you want to delete it?')){
       this.adminService.deleteAdmin($key);
-      this.toastrService.success('Successfull Operation', 'Admin Deleted')
+      this.flashMessagesServices.show('Usuario Creado Correactamente!',
+      {cssClass: 'alert-success', timeout: 4000});
     }
   }
   onEdit(admin: Admin){
