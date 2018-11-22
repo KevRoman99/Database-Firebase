@@ -9,6 +9,7 @@ import {NotFoundPageComponent} from './components/not-found-page/not-found-page.
 import { JobPositionsPageComponent } from './components/job-positions-page/job-positions-page.component';
 import {RegisterJobComponent} from './components/register-job/register-job.component';
 import {ProductPageComponent} from './components/product-page/product-page.component';
+import {RegisterProductComponent} from './components/register-product/register-product.component';
 import { from } from 'rxjs';
 import {AuthGuard} from './guards/auth.guard';
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'job', component: JobPositionsPageComponent, canActivate: [AuthGuard]},
   {path: 'jobRegister', component: RegisterJobComponent, canActivate: [AuthGuard]},
   {path: 'product', component:ProductPageComponent, canActivate: [AuthGuard]},
-  {path: '**', component: NotFoundPageComponent},
+  {path: 'registerProduct',component: RegisterProductComponent, canActivate:[AuthGuard]},
+  {path: '**', component: NotFoundPageComponent}
 ];
 
 @NgModule({

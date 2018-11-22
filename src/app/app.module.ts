@@ -34,8 +34,8 @@ import {environment} from '../environments/environment';
 
 import {AuthGuard} from './guards/auth.guard';
 import { RegisterJobComponent } from './components/register-job/register-job.component';
-import { ProductComponent } from './components/product/product.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { RegisterProductComponent } from './components/register-product/register-product.component';
 
 
 @NgModule({
@@ -49,9 +49,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     RegisterAdminComponent,
     JobPositionsPageComponent,
     RegisterJobComponent,
-    ProductComponent,
     ProductPageComponent,
- 
+    RegisterProductComponent
   ],
   imports: [
     AngularFireDatabaseModule,
