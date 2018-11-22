@@ -1,7 +1,8 @@
 <div class="card mt-5">
     <div class="card-body">
+      <h1 align="center"> Registar puesto</h1>
       <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm)">
-        
+        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="jobService.selectedJob.$key">
         <div class="form-group">
           <input 
           type="text" 
