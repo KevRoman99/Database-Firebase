@@ -1,25 +1,67 @@
-<div class="row">
-    <div class="col-md-12 mx-auto mt-4">
-        <div class="card">
-            <div class="card-body">
-        <h1 align="center">Puestos ingresados</h1> 
-<table class="table table-hover table-sm mt-4">
-    <tbody>
-      <tr *ngFor="let admin of adminList" class="table-danger">
-        <td scope="row">{{admin.name}}</td>
-        <td scope="row">{{admin.id}} </td>
-        <td>
-          <a class="btn btn-secondary text-white ml-3"  (click)="onEdit(admin)">
-            <i class="far fa-edit"></i>
-          </a>
-            <a class="btn btn-danger text-white ml-3" (click)="onDelete(admin.$key)">
-              <i class="fas fa-trash-alt"></i>
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table> 
-            </div>
+<div class="card mt-5">
+  <div class="card-body">
+    <h1 align="center">Puestos ingresados
+      <button class="btn btn-danger ml-5" style="width: 10%"   [routerLink]="['/jobRegister']"><i class="fas fa-plus-square"  rout></i></button>
+    </h1> 
+    <div class="card mt-5">
+      <div class="card-body">
+        <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm)">
+          <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="jobService.selectedJob.$key">
+          <div class="form-group">
+            <input 
+            type="text" 
+            class="form-control" 
+            name="id" 
+            #id="ngModel" 
+            [(ngModel)]="jobService.selectedJob.id"
+            placeholder="Add id "
+            >
           </div>
-        </div>
+          <div class="form-group">
+            <input
+            type="text"
+            class="form-control"
+            name="name"
+            #name=ngModel
+            [(ngModel)] = "jobService.selectedJob.name"
+            placeholder="Add name"
+            >
+          </div>
+          <div class="form-group">
+            <input
+            type="text"
+            class="form-control"
+            name="description"
+            #description="ngModel"
+            [(ngModel)]= "jobService.selectedJob.description"
+            placeholder="Add description"
+            >
+          </div>
+            <div class="from-group">
+              <button class="btn btn-primary" type="submit">
+                <i class="fas fa-plus-circle"></i> Update Job
+              </button>
+            </div>
+        </form>
       </div>
+    </div>
+    <div>
+    </div>
+    <table class="table table-sm table-hover mt-4">
+      <tbody>
+        <tr *ngFor="let job of jobList " class="table-danger">
+          <td>{{job.id}}</td>
+          <td>{{job.name}}</td>
+          <td>
+            <a class="btn btn-secondary text-white" (click)="onEdit(job)">
+              <i class="far fa-edit"></i>
+            </a>
+            <a class="btn btn-danger text-white" (click)="onDelete(job.$key)">
+              <i class="fas fa-trash-alt"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

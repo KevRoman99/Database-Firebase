@@ -17,12 +17,14 @@ import { RegisterAdminComponent } from './components/registry-page/register-admi
 import { JobPositionsPageComponent } from './components/job-positions-page/job-positions-page.component';
 
 
+
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {ToastrModule} from 'ngx-toastr';
 //services
 import {AuthService} from './services/auth.service';
 import {AdminService} from './services/admin.service';
+import {JobService} from './services/job.service'
 //firebase
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -31,6 +33,9 @@ import {environment} from '../environments/environment';
 
 
 import {AuthGuard} from './guards/auth.guard';
+import { RegisterJobComponent } from './components/register-job/register-job.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
+import { RegisterProductComponent } from './components/register-product/register-product.component';
 
 
 @NgModule({
@@ -43,7 +48,9 @@ import {AuthGuard} from './guards/auth.guard';
     NotFoundPageComponent,
     RegisterAdminComponent,
     JobPositionsPageComponent,
-
+    RegisterJobComponent,
+    ProductPageComponent,
+    RegisterProductComponent
   ],
   imports: [
     AngularFireDatabaseModule,
@@ -56,7 +63,7 @@ import {AuthGuard} from './guards/auth.guard';
     BrowserAnimationsModule,
     FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService],
+  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService,JobService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
