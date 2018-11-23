@@ -31,5 +31,6 @@ export class RegisterJobComponent implements OnInit {
       this.jobService.selectedJob = new Job();
     }
   }
+  
 
 }
