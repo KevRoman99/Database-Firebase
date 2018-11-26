@@ -6,6 +6,9 @@ import * as firebase from 'firebase/app';
 import {Admin} from '../models/admin';
 import {map} from 'rxjs/operators';
 
+import { Validator } from '@angular/forms';
+import { Direct } from 'protractor/built/driverProviders';
+
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +48,6 @@ export class AuthService {
   logout(){
     return this.afAuth.auth.signOut();
   }
+
 
 }

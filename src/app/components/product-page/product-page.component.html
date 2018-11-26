@@ -5,15 +5,15 @@
       </h1> 
       <div class="card mt-5">
         <div class="card-body">
-          <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm)">
-            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="jobService.selectedJob.$key">
+          <form #jobForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
             <div class="form-group">
               <input 
               type="text" 
               class="form-control" 
               name="id" 
               #id="ngModel" 
-              [(ngModel)]="jobService.selectedJob.id"
+              [(ngModel)]="productService.selectedProduct.id"
               placeholder="Add id "
               >
             </div>
@@ -23,7 +23,7 @@
               class="form-control"
               name="name"
               #name=ngModel
-              [(ngModel)] = "jobService.selectedJob.name"
+              [(ngModel)] = "productService.selectedProduct.name"
               placeholder="Add name"
               >
             </div>
@@ -33,13 +33,13 @@
               class="form-control"
               name="description"
               #description="ngModel"
-              [(ngModel)]= "jobService.selectedJob.description"
+              [(ngModel)]= "productService.selectedProduct.description"
               placeholder="Add description"
               >
             </div>
               <div class="from-group">
                 <button class="btn btn-primary" type="submit">
-                  <i class="fas fa-plus-circle"></i> Update Job
+                  <i class="fas fa-plus-circle"></i> Update Product
                 </button>
               </div>
           </form>

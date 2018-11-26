@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
 
 
@@ -15,6 +15,9 @@ import { ProfilePageComponent } from './components/profile-page/profile-page.com
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { RegisterAdminComponent } from './components/registry-page/register-admin/register-admin.component';
 import { JobPositionsPageComponent } from './components/job-positions-page/job-positions-page.component';
+import { RegisterJobComponent } from './components/register-job/register-job.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
+import { RegisterProductComponent } from './components/register-product/register-product.component';
 
 
 
@@ -24,7 +27,12 @@ import {ToastrModule} from 'ngx-toastr';
 //services
 import {AuthService} from './services/auth.service';
 import {AdminService} from './services/admin.service';
-import {JobService} from './services/job.service'
+import {JobService} from './services/job.service';
+import {AuthGuard} from './guards/auth.guard';
+import { ProductService } from './services/product.service';
+import {PasswordValition} from './models/password-valition';
+
+
 //firebase
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -32,10 +40,8 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {environment} from '../environments/environment';
 
 
-import {AuthGuard} from './guards/auth.guard';
-import { RegisterJobComponent } from './components/register-job/register-job.component';
-import { ProductPageComponent } from './components/product-page/product-page.component';
-import { RegisterProductComponent } from './components/register-product/register-product.component';
+
+
 
 
 @NgModule({
@@ -50,7 +56,8 @@ import { RegisterProductComponent } from './components/register-product/register
     JobPositionsPageComponent,
     RegisterJobComponent,
     ProductPageComponent,
-    RegisterProductComponent
+    RegisterProductComponent,
+
   ],
   imports: [
     AngularFireDatabaseModule,
@@ -61,9 +68,10 @@ import { RegisterProductComponent } from './components/register-product/register
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService,JobService],
+  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService,JobService,ProductService,PasswordValition],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,25 +3,34 @@
     <div class="card">
       <div class="card-body">
         <h1 class="text-center">Registrar Cuenta</h1>
-        <form  (Submit)="onSubmitAddUser()">
-          <div class="from-group">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
             <label for="email"> Email</label>
             <input type="email" 
             name="email" 
-            [(ngModel)]="email"
+            [formGroup]="email"
             class="form-control"
             placeholder="Add email"
             >  
           </div>
-          <div class="from-group">
+          <div class="form-group">
             <label for="password"> Contraseña</label>
-            <input type="password" name="password"  [(ngModel)]="password" class="form-control"
+            <input type="password" 
+            id="password"  
+            formControlName="password"
+            [formGroup]="form" 
+            class="form-control"
               placeholder="Add password">
           </div>
-          <div class="from-group">
+          <div class="form-group">
               <label for="password"> Confirmar Contraseña</label>
-              <input type="password" name="password" id="password" class="form-control"
-                placeholder="Confirm password">
+              <input type="password"
+               name="password" 
+               id="confirmPassword" 
+               class="form-control"
+               formControlName="confirmPassword"
+               [formGroup]="confirmPassword"
+               placeholder="Confirm password">
             </div>
           </form>       
 </div>
