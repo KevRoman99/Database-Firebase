@@ -1,8 +1,15 @@
 <div class="card mt-5">
     <div class="card-body">
+
+      <h1 align="center"> Registar puesto</h1>
+      <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+
       <h1 align="center"> Registar producto</h1>
       <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm)">
         <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedJob.$key">
+
+        
         <div class="form-group">
           <label> Registrar ID </label>
           <input 
