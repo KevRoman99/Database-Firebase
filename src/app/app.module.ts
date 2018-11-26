@@ -45,6 +45,8 @@ import { EmployeesPageComponent } from './components/employees-page/employees-pa
 import { RegisterEmployeesComponent } from './components/register-employees/register-employees.component';
 import { ClientsPageComponent } from './components/clients-page/clients-page.component';
 import { RegisterClientsComponent } from './components/register-clients/register-clients.component';
+import { AplicationsRolesPageComponent } from './components/aplications-roles-page/aplications-roles-page.component';
+import { RegisterAplicationsRolesComponent } from './components/register-aplications-roles/register-aplications-roles.component';
 
 
 
@@ -61,14 +63,13 @@ import { RegisterClientsComponent } from './components/register-clients/register
     RegisterJobComponent,
     ProductPageComponent,
     RegisterProductComponent,
-
-
-
     EmployeesPageComponent,
     RegisterEmployeesComponent,
     ClientsPageComponent,
     RegisterClientsComponent
-
+    RegisterClientsComponent,
+    AplicationsRolesPageComponent,
+    RegisterAplicationsRolesComponent
   ],
   imports: [
     AngularFireDatabaseModule,
