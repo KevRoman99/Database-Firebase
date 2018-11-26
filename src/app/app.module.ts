@@ -66,7 +66,6 @@ import { RegisterAplicationsRolesComponent } from './components/register-aplicat
     EmployeesPageComponent,
     RegisterEmployeesComponent,
     ClientsPageComponent,
-    RegisterClientsComponent
     RegisterClientsComponent,
     AplicationsRolesPageComponent,
     RegisterAplicationsRolesComponent
