@@ -11,10 +11,11 @@ import {RegisterJobComponent} from './components/register-job/register-job.compo
 import {ProductPageComponent} from './components/product-page/product-page.component';
 import {RegisterProductComponent} from './components/register-product/register-product.component';
 import { EmployeesPageComponent } from './components/employees-page/employees-page.component';
-import { from } from 'rxjs';
-import {AuthGuard} from './guards/auth.guard';
 import { RegisterEmployeesComponent } from './components/register-employees/register-employees.component';
 import { ClientsPageComponent } from './components/clients-page/clients-page.component';
+import { from } from 'rxjs';
+import {AuthGuard} from './guards/auth.guard';
+import { RegisterClientsComponent } from './components/register-clients/register-clients.component';
 const routes: Routes = [
   {path: '', component: LoginPageComponent},
   {path: 'registry', component: RegistryPageComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'employees', component: EmployeesPageComponent, canActivate: [AuthGuard]},
   {path: 'registerEmployees', component: RegisterEmployeesComponent, canActivate: [AuthGuard]},
   {path: 'clients', component: ClientsPageComponent, canActivate: [AuthGuard]},
+  {path: 'registerClients', component: RegisterClientsComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundPageComponent}
 ];
 
