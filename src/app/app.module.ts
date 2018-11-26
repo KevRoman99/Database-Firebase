@@ -41,6 +41,10 @@ import {environment} from '../environments/environment';
 
 
 
+import { EmployeesPageComponent } from './components/employees-page/employees-page.component';
+import { RegisterEmployeesComponent } from './components/register-employees/register-employees.component';
+import { ClientsPageComponent } from './components/clients-page/clients-page.component';
+import { RegisterClientsComponent } from './components/register-clients/register-clients.component';
 
 
 
@@ -57,6 +61,13 @@ import {environment} from '../environments/environment';
     RegisterJobComponent,
     ProductPageComponent,
     RegisterProductComponent,
+
+
+
+    EmployeesPageComponent,
+    RegisterEmployeesComponent,
+    ClientsPageComponent,
+    RegisterClientsComponent
 
   ],
   imports: [
