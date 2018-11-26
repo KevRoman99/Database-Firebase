@@ -16,6 +16,8 @@ import { ClientsPageComponent } from './components/clients-page/clients-page.com
 import { from } from 'rxjs';
 import {AuthGuard} from './guards/auth.guard';
 import { RegisterClientsComponent } from './components/register-clients/register-clients.component';
+import { AplicationsRolesPageComponent } from './components/aplications-roles-page/aplications-roles-page.component';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 const routes: Routes = [
   {path: '', component: LoginPageComponent},
   {path: 'registry', component: RegistryPageComponent},
@@ -28,6 +30,7 @@ const routes: Routes = [
   {path: 'registerEmployees', component: RegisterEmployeesComponent, canActivate: [AuthGuard]},
   {path: 'clients', component: ClientsPageComponent, canActivate: [AuthGuard]},
   {path: 'registerClients', component: RegisterClientsComponent, canActivate: [AuthGuard]},
+  {path: 'aplications-roles', component: AplicationsRolesPageComponent, canActivate:[AuthGuard]},
   {path: '**', component: NotFoundPageComponent}
 ];
 
