@@ -10,8 +10,10 @@ import { JobPositionsPageComponent } from './components/job-positions-page/job-p
 import {RegisterJobComponent} from './components/register-job/register-job.component';
 import {ProductPageComponent} from './components/product-page/product-page.component';
 import {RegisterProductComponent} from './components/register-product/register-product.component';
+import { EmployeesPageComponent } from './components/employees-page/employees-page.component';
 import { from } from 'rxjs';
 import {AuthGuard} from './guards/auth.guard';
+import { RegisterEmployeesComponent } from './components/register-employees/register-employees.component';
 const routes: Routes = [
   {path: '', component: LoginPageComponent},
   {path: 'registry', component: RegistryPageComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: 'jobRegister', component: RegisterJobComponent, canActivate: [AuthGuard]},
   {path: 'product', component:ProductPageComponent, canActivate: [AuthGuard]},
   {path: 'registerProduct',component: RegisterProductComponent, canActivate:[AuthGuard]},
+  {path: 'employees', component: EmployeesPageComponent, canActivate: [AuthGuard]},
+  {path: 'registerEmployees', component: RegisterEmployeesComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundPageComponent}
 ];
 
