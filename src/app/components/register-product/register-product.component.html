@@ -9,6 +9,7 @@
       <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm)">
         <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedJob.$key">
 
+        
         <div class="form-group">
           <label> Registrar ID </label>
           <input 
