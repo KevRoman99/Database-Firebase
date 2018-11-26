@@ -36,6 +36,8 @@ import {AuthGuard} from './guards/auth.guard';
 import { RegisterJobComponent } from './components/register-job/register-job.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { RegisterProductComponent } from './components/register-product/register-product.component';
+import { EmployeesPageComponent } from './components/employees-page/employees-page.component';
+import { RegisterEmployeesComponent } from './components/register-employees/register-employees.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { RegisterProductComponent } from './components/register-product/register
     JobPositionsPageComponent,
     RegisterJobComponent,
     ProductPageComponent,
-    RegisterProductComponent
+    RegisterProductComponent,
+    EmployeesPageComponent,
+    RegisterEmployeesComponent
   ],
   imports: [
     AngularFireDatabaseModule,

@@ -1,0 +1,89 @@
+<div class="card mt-5">
+  <div class="card-body">
+    <h1 align="center"> Registar empleados</h1>
+    <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm)">
+      <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="jobService.selectedJob.$key">
+      <div class="form-group">
+        <label> Registrar ID </label>
+        <input 
+        type="text" 
+        class="form-control" 
+        name="id" 
+        #id="ngModel" 
+        [(ngModel)]="jobService.selectedJob.id"
+        placeholder="Add id "
+        >
+      </div>
+      <div class="form-group">
+        <label> Registrar nombre </label>
+        <input
+        type="text"
+        class="form-control"
+        name="name"
+        #name=ngModel
+        [(ngModel)] = "jobService.selectedJob.name"
+        placeholder="Add name"
+        >
+      </div>
+      <div class="form-group">
+        <label> Registrar descripcion </label>
+        <input
+        type="text"
+        class="form-control"
+        name="description"
+        #description="ngModel"
+        [(ngModel)]= "jobService.selectedJob.description"
+        placeholder="Add description"
+        >
+      </div>
+      <div class="form-group">
+        <label for="dateofhire"> Fecha de nacimiento </label>
+        <input
+        type="date"
+        class="form-control"
+        name="date"
+        #date="ngModel"
+        [(ngModel)]="adminService.selectedAdmin.date"
+        placeholder="Add Date of hire"
+        >
+      </div>
+      <div class="form-group">
+          <label for="dateofhire"> Fecha de contratación </label>
+          <input
+          type="date"
+          class="form-control"
+          name="date"
+          #date="ngModel"
+          [(ngModel)]="adminService.selectedAdmin.date"
+          placeholder="Add Date of hire"
+          >
+        </div>
+        <div class="form-group">
+          <label> Agregar un puesto </label>
+            <select class="custom-select">
+              <option selected="">Seleccionar un puesto</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="form-group">
+              <label> Agregar un país </label>
+              <select class="custom-select">
+                <option selected="">Seleccionar un país</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+        <div class="from-group">
+          <button class="btn btn-primary mt-3 ml-2" type="submit">
+            <i class="fas fa-plus-circle"></i> Add Employee
+          </button>
+          <button class="btn btn-secondary mt-3 ml-2" type="reset" (click)="resetForm(productForm)">
+            <i class="fas fa-sync-alt"></i> Reset
+          </button>
+        </div>
+    </form>
+  </div>
+</div>

@@ -4,6 +4,7 @@
       <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm)">
         <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedJob.$key">
         <div class="form-group">
+          <label> Registrar ID </label>
           <input 
           type="text" 
           class="form-control" 
@@ -14,6 +15,7 @@
           >
         </div>
         <div class="form-group">
+          <label> Registrar descripcion </label>
           <input
           type="text"
           class="form-control"
@@ -24,15 +26,17 @@
           >
         </div>
         <div class="form-group">
-          <input
-          type="text"
-          class="form-control"
-          name="solution"
-          #solution="ngModel"
-          [(ngModel)]= "productService.selectedProduct.solution"
-          placeholder="Add description"
-          >
-        </div>
+            <label> Registrar solucion</label>
+            <Button class="btn btn-warning ml-5"><i class="fas fa-plus-square"  rout></i></Button>
+            <input
+            type="text"
+            class="form-control mt-1"
+            name="description"
+            #description=ngModel
+            [(ngModel)] = "productService.selectedProduct.description"
+            placeholder="Add solution"
+            >
+          </div>
         <table class="table table-sm table-hover mt-4">
             <tbody>
               <tr *ngFor="let job of jobList " class="table-danger">
