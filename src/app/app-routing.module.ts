@@ -14,6 +14,7 @@ import { EmployeesPageComponent } from './components/employees-page/employees-pa
 import { from } from 'rxjs';
 import {AuthGuard} from './guards/auth.guard';
 import { RegisterEmployeesComponent } from './components/register-employees/register-employees.component';
+import { ClientsPageComponent } from './components/clients-page/clients-page.component';
 const routes: Routes = [
   {path: '', component: LoginPageComponent},
   {path: 'registry', component: RegistryPageComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'registerProduct',component: RegisterProductComponent, canActivate:[AuthGuard]},
   {path: 'employees', component: EmployeesPageComponent, canActivate: [AuthGuard]},
   {path: 'registerEmployees', component: RegisterEmployeesComponent, canActivate: [AuthGuard]},
+  {path: 'clients', component: ClientsPageComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundPageComponent}
 ];
 

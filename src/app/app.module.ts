@@ -38,6 +38,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { RegisterProductComponent } from './components/register-product/register-product.component';
 import { EmployeesPageComponent } from './components/employees-page/employees-page.component';
 import { RegisterEmployeesComponent } from './components/register-employees/register-employees.component';
+import { ClientsPageComponent } from './components/clients-page/clients-page.component';
+import { RegisterClientsComponent } from './components/register-clients/register-clients.component';
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { RegisterEmployeesComponent } from './components/register-employees/regi
     ProductPageComponent,
     RegisterProductComponent,
     EmployeesPageComponent,
-    RegisterEmployeesComponent
+    RegisterEmployeesComponent,
+    ClientsPageComponent,
+    RegisterClientsComponent
   ],
   imports: [
     AngularFireDatabaseModule,
