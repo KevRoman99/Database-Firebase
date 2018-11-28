@@ -3,32 +3,56 @@
     <div class="card">
       <div class="card-body">
         <h1 class="text-center">Registrar Cuenta</h1>
-        <form  (Submit)="onSubmitAddUser()">
+        <form [formGroup]="form"  (Submit)="onSubmitAddUser(form.value)">
           <div class="from-group">
             <label for="email"> Email</label>
             <input type="email" 
             name="email" 
-            [(ngModel)]="email"
+            formControlName="email"
             class="form-control"
             placeholder="Add email"
             >  
           </div>
-          <div class="from-group">
+          <div >
             <label for="password"> Contraseña</label>
-            <input type="password" name="password"  [(ngModel)]="password" class="form-control"
-              placeholder="Add password">
+            <input type="password"
+            required 
+            name="password"  
+            formControlName="password" 
+            class="form-control"
+              placeholder="Add password"
+              >
           </div>
-          <div class="from-group">
-              <label for="password"> Confirmar Contraseña</label>
-              <input type="password" name="password" id="password" class="form-control"
-                placeholder="Confirm password">
+          <div class="form-group" >
+              <label for="confirmPassword"> Confirmar Contraseña</label>
+              <input type="password"
+              required 
+              name="confirmPassword" 
+              id="confirmPassword"
+              formControlName="confirmPassword"
+              class="form-control"
+              placeholder="Confirm password"
+              >
+              
             </div>
+            <div class="alert alert-danger" *ngIf="form.controls.confirmPassword.errors?.MatchPassword">Password not macth </div>
+          
           </form>       
 </div>
-<div class="card mt-5">
+ <div class="card mt-5">
     <div class="card-body">
       <h1 class="text-center">Registrar Administrador</h1>
       <form #adminForm="ngForm" (ngSubmit)="onSubmit(adminForm)"> 
+          <div class="from-group">
+              <label for="email"> Email</label>
+              <input type="email" 
+              name="email" 
+              #name="ngModel"
+              [(ngModel)]="adminService.selectedAdmin.email"
+              class="form-control"
+              placeholder="Add email"
+              >  
+            </div>
         <div class="form-group">
           <label for="nameCompany"> Name Company</label>
           <input 
@@ -95,11 +119,11 @@
                 placeholder="Add Date of hire"
                 >
               </div>
-          <div class="from-group">
-            <button class="btn btn-primary" type="submit" (click)="onSubmitAddUser()">
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit" (click)="onSubmitAddUser(form.value)" >
               <i class="fas fa-plus-circle"></i> Add account
             </button>
-            <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+            <button class="btn btn-secondary ml-5" type="reset" (click)="resetForm(productForm)">
               <i class="fas fa-sync-alt"></i> Reset
             </button>
           </div>

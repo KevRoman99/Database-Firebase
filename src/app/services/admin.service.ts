@@ -7,20 +7,24 @@ import { Admin } from '../models/admin';
 })
 export class AdminService {
   adminList: AngularFireList <any>;
+  nuevaLista: AngularFireList<any>;
   selectedAdmin: Admin = new Admin ();
   constructor(private firebase: AngularFireDatabase) { }
 
-  getAdmins() {
-    return this.adminList = this.firebase.list('admins');
+  getAdmins(name:string) {
+    return this.adminList = this.firebase.list(name);
   }
   insertAdmin(admin: Admin){
-    this.adminList.push({
+    this.getAdmins(admin.name);
+    this.nuevaLista = this.firebase.list(admin.name + '/admins');
+    this.nuevaLista.push({
       name: admin.name,
       id: admin.id,
       logo: admin.logo,
       nombres: admin.names,
       apellidos: admin.lastNames,
-      fechaC: admin.date
+      fechaC: admin.date,
+      email: admin.email
    });
   }
   deleteAdmin($key: string){
@@ -33,7 +37,8 @@ export class AdminService {
       logo: admin.logo,
       nombres: admin.names,
       apellidos: admin.lastNames,
-      fechaC: admin.date
+      fechaC: admin.date,
+      email: admin.email
     });
   }
 

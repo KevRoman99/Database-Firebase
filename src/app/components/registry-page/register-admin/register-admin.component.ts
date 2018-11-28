@@ -11,7 +11,8 @@ import {Router, Route} from '@angular/router';
 //Messages
 import {FlashMessagesModule, FlashMessagesService} from 'angular2-flash-messages';
 
-import { NgForm, FormBuilder, FormGroup,Validator, Validators } from '@angular/forms';
+import { NgForm, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Admin } from 'src/app/models/admin';
 
 
 
@@ -23,14 +24,27 @@ import { NgForm, FormBuilder, FormGroup,Validator, Validators } from '@angular/f
 export class RegisterAdminComponent implements OnInit {
   public email: string;
   public password: string;
-
-
   form: FormGroup;
-  constructor(fb: FormBuilder)
+  
+  constructor(private fb: FormBuilder,
+    public authService: AuthService,
+    public adminService: AdminService,
+    public router: Router)
   {
-    this.form = fb.group({
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
+    this.form =  this.fb.group({
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.email
+      ])),
+      password: new FormControl ('', Validators.compose([
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(25),
+        
+      ])),
+      confirmPassword: new FormControl ('', Validators.compose([
+        Validators.required
+      ])),
     }, {
       validator: PasswordValition.MatchPassword // your validation method
     })
@@ -38,22 +52,20 @@ export class RegisterAdminComponent implements OnInit {
 
 
   ngOnInit() {
-   // this.adminService.getAdmins();
+    
   }
   //Agregar administrador
   onSubmit(adminForm: NgForm){
-    //this.adminService.insertAdmin(adminForm.value)
+    this.adminService.insertAdmin(adminForm.value);
   }
-  //Agregar Una cuentra
-  onSubmitAddUser(){
-   // this.authService.RegistryUser(this.email, this.password)
-    //.then((res) =>{
-    // this.flashMessagesServices.show('Usuario Creado Correactamente!', 
-    // {cssClass: 'alert-success', timeout: 4000});
-     //this.router.navigate(['']);
-   //   }).catch((err) =>{
-     // console.log(err);
-    //});
-    console.log(this.form)
+  //Agregar Una cuenta
+  onSubmitAddUser(form){
+   this.authService.RegistryUser(form.email, form.password)
+    .then((res) =>{
+     this.router.navigate(['']);
+      }).catch((err) =>{
+      console.log(err);
+    });
+   
   }
 }

@@ -27,7 +27,9 @@ export class AuthService {
   ){
     return new Promise((resolve, reject) =>{
       this.afAuth.auth.createUserWithEmailAndPassword(email,password)
-        .then( userData => resolve(userData),
+        .then( userData => {
+          resolve(userData)
+        },
         err => reject(err));
     });
   }

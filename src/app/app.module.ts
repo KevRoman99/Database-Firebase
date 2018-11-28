@@ -82,7 +82,7 @@ import { RegisterAplicationsRolesComponent } from './components/register-aplicat
     FlashMessagesModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService,JobService,ProductService,PasswordValition],
+  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService,JobService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
