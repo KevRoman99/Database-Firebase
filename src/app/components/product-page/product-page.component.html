@@ -3,51 +3,9 @@
       <h1 align="center">Productos ingresados
         <button class="btn btn-warning ml-5" style="width: 10%"   [routerLink]="['/registerProduct']"><i class="fas fa-plus-square"  rout></i></button>
       </h1> 
-<<<<<<< HEAD
-      <div class="card mt-5">
-        <div class="card-body">
-          <form #jobForm="ngForm" (ngSubmit)="onSubmit(productForm)">
-            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
-            <div class="form-group">
-              <input 
-              type="text" 
-              class="form-control" 
-              name="id" 
-              #id="ngModel" 
-              [(ngModel)]="productService.selectedProduct.id"
-              placeholder="Add id "
-              >
-            </div>
-            <div class="form-group">
-              <input
-              type="text"
-              class="form-control"
-              name="name"
-              #name=ngModel
-              [(ngModel)] = "productService.selectedProduct.name"
-              placeholder="Add name"
-              >
-            </div>
-            <div class="form-group">
-              <input
-              type="text"
-              class="form-control"
-              name="description"
-              #description="ngModel"
-              [(ngModel)]= "productService.selectedProduct.description"
-              placeholder="Add description"
-              >
-            </div>
-              <div class="from-group">
-                <button class="btn btn-primary" type="submit">
-                  <i class="fas fa-plus-circle"></i> Update Product
-                </button>
-              </div>
-          </form>
-        </div>
-      </div>
-      <div>
-      </div>
+
+      
+     
       <table class="table table-sm table-hover mt-4">
         <tbody>
           <tr *ngFor="let job of jobList " class="table-danger">
@@ -64,7 +22,5 @@
           </tr>
         </tbody>
       </table>
-=======
->>>>>>> 82bf074fa5e0b8415c59a98079746e4ea73e2914
     </div>
   </div>

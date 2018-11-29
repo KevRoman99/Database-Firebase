@@ -47,6 +47,7 @@ import { ClientsPageComponent } from './components/clients-page/clients-page.com
 import { RegisterClientsComponent } from './components/register-clients/register-clients.component';
 import { AplicationsRolesPageComponent } from './components/aplications-roles-page/aplications-roles-page.component';
 import { RegisterAplicationsRolesComponent } from './components/register-aplications-roles/register-aplications-roles.component';
+import { RegistrarAdminComponent } from './components/registrar-admin/registrar-admin.component';
 
 
 
@@ -68,7 +69,8 @@ import { RegisterAplicationsRolesComponent } from './components/register-aplicat
     ClientsPageComponent,
     RegisterClientsComponent,
     AplicationsRolesPageComponent,
-    RegisterAplicationsRolesComponent
+    RegisterAplicationsRolesComponent,
+    RegistrarAdminComponent
   ],
   imports: [
     AngularFireDatabaseModule,
@@ -82,7 +84,7 @@ import { RegisterAplicationsRolesComponent } from './components/register-aplicat
     FlashMessagesModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService,JobService,ProductService,PasswordValition],
+  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService,JobService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
