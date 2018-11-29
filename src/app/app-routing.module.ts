@@ -13,11 +13,13 @@ import {RegisterProductComponent} from './components/register-product/register-p
 import { EmployeesPageComponent } from './components/employees-page/employees-page.component';
 import { RegisterEmployeesComponent } from './components/register-employees/register-employees.component';
 import { ClientsPageComponent } from './components/clients-page/clients-page.component';
-import { from } from 'rxjs';
-import {AuthGuard} from './guards/auth.guard';
 import { RegisterClientsComponent } from './components/register-clients/register-clients.component';
 import { AplicationsRolesPageComponent } from './components/aplications-roles-page/aplications-roles-page.component';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { RegisterAplicationsRolesComponent } from './components/register-aplications-roles/register-aplications-roles.component';
+import { from } from 'rxjs';
+import {AuthGuard} from './guards/auth.guard';
+
 const routes: Routes = [
   {path: '', component: LoginPageComponent},
   {path: 'registry', component: RegistryPageComponent},
@@ -31,6 +33,7 @@ const routes: Routes = [
   {path: 'clients', component: ClientsPageComponent, canActivate: [AuthGuard]},
   {path: 'registerClients', component: RegisterClientsComponent, canActivate: [AuthGuard]},
   {path: 'aplications-roles', component: AplicationsRolesPageComponent, canActivate:[AuthGuard]},
+  {path: 'register-apps-roles', component: RegisterAplicationsRolesComponent, canActivate:[AuthGuard]},
   {path: '**', component: NotFoundPageComponent}
 ];
 

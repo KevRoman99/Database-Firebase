@@ -18,6 +18,8 @@ import { JobPositionsPageComponent } from './components/job-positions-page/job-p
 import { RegisterJobComponent } from './components/register-job/register-job.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { RegisterProductComponent } from './components/register-product/register-product.component';
+import { RegisterAplicationsRolesComponent } from './components/register-aplications-roles/register-aplications-roles.component';
+
 
 
 
@@ -29,8 +31,10 @@ import {AuthService} from './services/auth.service';
 import {AdminService} from './services/admin.service';
 import {JobService} from './services/job.service';
 import {AuthGuard} from './guards/auth.guard';
-import { ProductService } from './services/product.service';
+import {ProductService } from './services/product.service';
 import {PasswordValition} from './models/password-valition';
+import {clientService} from './services/clients.service';
+import { AppsRolesService } from './services/apps-roles.service';
 
 
 //firebase
@@ -46,7 +50,8 @@ import { RegisterEmployeesComponent } from './components/register-employees/regi
 import { ClientsPageComponent } from './components/clients-page/clients-page.component';
 import { RegisterClientsComponent } from './components/register-clients/register-clients.component';
 import { AplicationsRolesPageComponent } from './components/aplications-roles-page/aplications-roles-page.component';
-import { RegisterAplicationsRolesComponent } from './components/register-aplications-roles/register-aplications-roles.component';
+
+
 
 
 
@@ -69,6 +74,7 @@ import { RegisterAplicationsRolesComponent } from './components/register-aplicat
     RegisterClientsComponent,
     AplicationsRolesPageComponent,
     RegisterAplicationsRolesComponent
+
   ],
   imports: [
     AngularFireDatabaseModule,
@@ -82,7 +88,7 @@ import { RegisterAplicationsRolesComponent } from './components/register-aplicat
     FlashMessagesModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService,JobService,ProductService,PasswordValition],
+  providers: [AuthService, AuthGuard, FlashMessagesService, AdminService,JobService,ProductService,PasswordValition,clientService,AppsRolesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

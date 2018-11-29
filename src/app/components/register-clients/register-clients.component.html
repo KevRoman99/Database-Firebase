@@ -1,8 +1,8 @@
 <div class="card mt-5">
     <div class="card-body">
-      <h1 align="center"> Registar empleados</h1>
-      <form #jobForm="ngForm" (ngSubmit)="onSubmit(jobForm)">
-        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="jobService.selectedJob.$key">
+      <h1 align="center"> Registar clientes</h1>
+      <form #clientsForm="ngForm" (ngSubmit)="onSubmit(clientsForm)">
+        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="clientService.selectedClient.$key">
         <div class="form-group">
           <label> Registrar ID </label>
           <input 
@@ -10,7 +10,7 @@
           class="form-control" 
           name="id" 
           #id="ngModel" 
-          [(ngModel)]="jobService.selectedJob.id"
+          [(ngModel)]="clientService.selectedClient.id"
           placeholder="Add id "
           >
         </div>
@@ -19,33 +19,35 @@
             <input 
             type="text" 
             class="form-control" 
-            name="id" 
+            name="name" 
             #id="ngModel" 
-            [(ngModel)]="jobService.selectedJob.id"
+            [(ngModel)]="clientService.selectedClient.name"
             placeholder="Add nombre"
             >
           </div>
           <div class="form-group">
-              <label> Agregar un país </label>
-                <select class="custom-select">
-                  <option selected="">Seleccionar un pais</option>
-                  <option value="1">Guatemala</option>
-                  <option value="2">Perú</option>
-                  <option value="3">Cobol</option>
-                </select>
-              </div>
-              <div class="form-group">
-                  <label> Registrar Contacto </label>
-                  <Button class="btn btn-success ml-5"><i class="fas fa-plus-square"  rout></i></Button>
-                  <input 
-                  type="text" 
-                  class="form-control mt-1" 
-                  name="id" 
-                  #id="ngModel" 
-                  [(ngModel)]="jobService.selectedJob.id"
-                  placeholder="Add contact"
-                  >
-                </div>
+            <label> Registrar país </label>
+            <input 
+            type="text" 
+            class="form-control" 
+            name="country" 
+            #id="ngModel" 
+            [(ngModel)]="clientService.selectedClient.country"
+            placeholder="Add country"
+            >
+          </div>
+          <div class="form-group">
+              <label> Registrar Contacto </label>
+              <Button class="btn btn-success ml-5"><i class="fas fa-plus-square"  rout></i></Button>
+              <input 
+              type="text" 
+              class="form-control mt-1" 
+              name="contact" 
+              #id="ngModel" 
+              [(ngModel)]="clientService.selectedClient.contact"
+              placeholder="Add contact"
+              >
+            </div>
           <div class="from-group">
             <button class="btn btn-primary mt-3 ml-2" type="submit">
               <i class="fas fa-plus-circle"></i> Add Employee
