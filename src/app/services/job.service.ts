@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Job } from '../models/job';
+import {Admin} from '../models/admin';
 @Injectable({
   providedIn: 'root'
 })
 export class JobService {
 
   jobList: AngularFireList <any>;
+  adminList: AngularFireList <any>;
   selectedJob: Job = new Job();
   constructor(private firebase: AngularFireDatabase) { }
   getJob(){

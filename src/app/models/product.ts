@@ -3,4 +3,5 @@ export class Product {
     id: string;
     description: string;
     solution: string;
+    codigoAdmin: string;
 }

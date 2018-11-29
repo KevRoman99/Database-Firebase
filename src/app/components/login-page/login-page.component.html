@@ -3,20 +3,24 @@
     <div class="card">
       <div class="card-body">
         <h1 class="text-center">Login</h1>
-        <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin()" >
+        <form [formGroup]="form" (ngSubmit)="onSubmitLogin(form.value)">
           <div class="from-group">
             <label for="email">email</label>
             <input type="email" name="email" [(ngModel)]="email" class="form-control">
+          </div>
             <div class="from-group">
                 <label for="password">Contraseña</label>
                 <input type="password" name="password" [(ngModel)]="password" class="form-control">
+            </div>
+            <div class="from-group">
+              <label for="name">Nombre de la empresa</label>
+              <input type="text" name="name" [(ngModel)]="name" class="form-control">
             </div>
             <div class="from-gruop justify-content-around col-lg ">
                 <button class="btn btn-primary m-3 " type="submit">
                     <i class="fas fa-sign-in-alt"></i> Submit
                   </button>
             </div>
-          </div>
         </form>
       </div>
     </div>

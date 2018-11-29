@@ -6,4 +6,5 @@ export class Admin {
     names: string;
     lastNames: string;
     date: Date;
+    email: string;
 }

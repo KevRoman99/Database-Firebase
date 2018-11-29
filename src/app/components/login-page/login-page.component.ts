@@ -17,6 +17,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {
   }
   onSubmitLogin(){
+     
     this.authService.Login(this.email, this.password)
     .then((res) =>{
       this.router.navigate(['/profile']);

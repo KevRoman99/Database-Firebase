@@ -15,7 +15,7 @@ export class RegisterJobComponent implements OnInit {
   constructor(private jobService: JobService ) { }
 
   ngOnInit() {
-    this.jobService.getJob();
+    //this.jobService.getJob();
 
   }
   onSubmit(jobForm: NgForm){
