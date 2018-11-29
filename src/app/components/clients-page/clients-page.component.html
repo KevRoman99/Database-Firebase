@@ -3,5 +3,23 @@
       <h1 align="center">Clientes ingresados
         <button class="btn btn-success ml-5" style="width: 10%"   [routerLink]="['/registerClients']"><i class="fas fa-plus-square"  rout></i></button>
       </h1> 
+      <table class="table table-sm table-hover mt-4">
+        <tbody>
+          <tr *ngFor="let Clients of clientList " class="table-success">
+            <td>{{Clients.id}}</td>
+            <td>{{Clients.name}}</td>
+            <td>{{Clients.country}}</td>
+            <td>{{Clients.contact}}</td>
+            <td>
+              <a class="btn btn-secondary text-white" (click)="onEdit(Clients)">
+                <i class="far fa-edit"></i>
+              </a>
+              <a class="btn btn-danger text-white ml-2" (click)="onDelete(Clients.$key)">
+                <i class="fas fa-trash-alt"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>

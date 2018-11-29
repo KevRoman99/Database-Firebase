@@ -13,8 +13,7 @@ export class JobService {
   selectedJob: Job = new Job();
   constructor(private firebase: AngularFireDatabase) { }
   getJob(){
-    
-    return this.jobList = this.firebase.list('/jobs');
+    return this.jobList = this.firebase.list('kev/admins/-LSQ0ZjtixlCUxJLOayV/jobs');
   }
   insertJob(job: Job){
     this.jobList.push({
