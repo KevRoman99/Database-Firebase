@@ -66,6 +66,5 @@ export class RegisterAdminComponent implements OnInit {
       }).catch((err) =>{
       console.log(err);
     });
-   
   }
 }

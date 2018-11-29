@@ -22,7 +22,7 @@ export class JobPositionsPageComponent implements OnInit {
       private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.jobService.getJob()
+    /*
       .snapshotChanges()
         .subscribe(item =>{
           this.jobList = [];
@@ -31,7 +31,7 @@ export class JobPositionsPageComponent implements OnInit {
             x["$key"] = element.key;
             this.jobList.push(x as Job);
           });
-        });
+        });*/
   }
   onDelete($key: string){
     if(confirm('Are you sure you want to delete it?')){
